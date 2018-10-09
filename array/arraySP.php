@@ -1,6 +1,7 @@
 <?php
 
 $url = "https://cdn.tgdd.vn/Products/Images/";
+
 $arraySP = [
     [
         'name'=>'Samsung Galaxy J8',
