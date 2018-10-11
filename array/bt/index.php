@@ -26,7 +26,7 @@ require_once '../arraySP.php';
         ?>
         <div class="sanpham">
             <div class="hinhsp">
-                <img src="image/phone.png" alt="">
+                <img src="<?=$url.$sanpham['image']?>" alt="">
             </div>
             <div class="thongtin">
                 <h3><?php echo $sanpham['name']?></h3>
