@@ -1,7 +1,5 @@
 <?php
-
 $url = "https://cdn.tgdd.vn/Products/Images/";
-
 $arraySP = [
     [
         'name'=>'Samsung Galaxy J8',
@@ -54,5 +52,4 @@ $arraySP = [
         'image'=>'42/153830/samsung-galaxy-j8-400x460.png'
     ]
 ];
-
 ?>

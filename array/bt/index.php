@@ -29,15 +29,15 @@ require_once '../arraySP.php';
                 <img src="image/phone.png" alt="">
             </div>
             <div class="thongtin">
-                <h2>Oppo F1S</h2>
+                <h3><?php echo $sanpham['name']?></h3>
                 <li>Cơ hội trúng 30 xe Wave Alpha khi trả </li>
                 <li>Cơ hội trúng 30 xe Wave Alpha khi trả </li>
                 <li class="khuyenmai">Khuyến mãi</li>
                 <li>Cơ hội trúng 30 xe Wave Alpha khi trả </li>
                 <li>Cơ hội trúng 30 xe Wave Alpha khi trả </li>
             </div>
-            <div class="tensp">Oppo F1S</div>
-            <div class="giasp">7.000.000</div>
+            <div class="tensp"><?=$sanpham['name']?></div>
+            <div class="giasp"><?=number_format($sanpham['price'])?> vnd</div>
         </div>
         <?php
         endforeach
