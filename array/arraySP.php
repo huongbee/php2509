@@ -9,6 +9,11 @@ $arraySP = [
         'image'=>'42/153830/samsung-galaxy-j8-400x460.png'
     ],
     [
+        'name'=>'Samsung Galaxy J8',
+        'price'=>6200000,
+        'image'=>'42/153830/samsung-galaxy-j8-400x460.png'
+    ],
+    [
         'name'=>'OPPO F7 Youth',
         'price'=>5900000,
         'image'=>'42/156586/oppo-f7-youth-2-400x460.png'
