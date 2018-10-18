@@ -64,6 +64,5 @@ echo tinhTong($a);
 echo tinhTong([1,2,3]);
 echo tinhTong([1,2,3]);
 echo tinhTong([1,2,3]);
-echo tinhTong([1,2,3]);
     
 ?>
