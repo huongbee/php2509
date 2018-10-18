@@ -61,7 +61,7 @@ if(isset($_GET['btn'])){
         if($b==0){
             $kq = "B phải khác 0";
         }
-        else $kq = $a/$b;
+        else $kq = round($a/$b,2);
     }
     else{
         if($b==0){
