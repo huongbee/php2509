@@ -43,12 +43,7 @@ else{
  * 
  */
 
- /**
-  * Upload nhiều file cùng lúc
-  * 1. Chỉ cho phép upload các file hình ảnh (png, jpg, gif)
-  * 2. File upload không quá 1 MB
-  * 3. Đổi tên file trước khi upload
-  */
+ 
 
 
 ?>
