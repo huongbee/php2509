@@ -1,14 +1,37 @@
 <?php
 
-//$file = $_POST['avatar']; //false
 $file = $_FILES['avatar'];
-
 $tmpName = $file['tmp_name'];
 $name = $file['name'];
 
-move_uploaded_file($tmpName,"avatars/$name");
+if($file['size'] <= 1024*1024){
 
-echo 'thanh cong';
+    $ext = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+    $arrExt = ['png', 'jpg', 'gif'];
+    if(in_array($ext,$arrExt)){
+
+        // 2018-10-20-19-58-24-a.png
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $newName = date('Y-m-d-H-i-s',time()).'-'.$name;
+        move_uploaded_file($tmpName,"avatars/$newName");
+
+        if(file_exists("avatars/$newName")){
+            echo 'thanh cong';
+        }
+        else{
+            echo 'Upload fail';
+        }
+    }
+    else{
+        echo 'File not allow!';
+    }
+}
+else{
+    echo "File too large!";
+}
+
+
+
 //print_r($file);
 
 /**
