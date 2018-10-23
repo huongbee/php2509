@@ -13,6 +13,14 @@
             <div class="col-4">
                 <form action="xulylogin.php" method="post">
                     <h3 class="text-center">User Login</h3>
+                    <?php session_start(); if(isset($_SESSION['message'])): ?>
+                        <div class="alert alert-danger">
+                            <?php
+                            echo $_SESSION['message'];
+                            unset($_SESSION['message']);
+                            ?>
+                        </div>
+                    <?php endif?>
                     <div class="form-group">
                         <label for="username">Username:</label>
                         <input type="text" name="txtUsername" id="username" class="form-control" required="required" >
@@ -22,7 +30,7 @@
                         <input type="password" name="txtPassword" id="password" class="form-control" required="required" >
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary" name="btnLogin">Login</button>
                     </div>
                 </form>
             </div>
