@@ -32,12 +32,37 @@ require_once 'data/arraySP.php';
             </div>
             <div class="tensp"><?=$sanpham['name']?></div>
             <div class="giasp"><?=number_format($sanpham['price'])?> vnd</div>
-            <div class="btn-add-to-cart">Mua ngay</div>
+            <div class="btn-add-to-cart" data-id="<?=$sanpham['id']?>">Mua ngay</div>
         </div>
         <?php
         endforeach
         ?>
        
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+    $('.btn-add-to-cart').click(function(){
+        var idSP = $(this).attr('data-id')
+        $.ajax({
+            'type':'POST',
+            'url': 'add-to-cart.php',
+            'data':{
+                "id": idSP,
+            },
+            success:function(response){
+                console.log(response)
+                alert('Thêm thành công')
+            },
+            error:function(){
+                alert('Vui lòng thử lại')
+            }
+        })
+    })
+    
+    </script>
+
 </body>
+
 </html>
