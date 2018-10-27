@@ -52,8 +52,8 @@ require_once 'data/arraySP.php';
                 "id": idSP,
             },
             success:function(response){
-                console.log(response)
-                alert('Thêm thành công')
+                // console.log(response)
+                alert(response)
             },
             error:function(){
                 alert('Vui lòng thử lại')

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'data/arraySP.php';
 include_once 'data/function.php';
 
@@ -6,10 +7,15 @@ $id = $_POST['id'];
 
 $sp = findProduct($id,$arraySP);
 
-print_r($sp);
-
-
-
+if(!empty($sp)){
+    $_SESSION['cart'] = [
+        $id => $sp,
+    ];
+    echo 'Add to cart success';
+}
+else{
+    echo 'Not found!';
+}
 
 
 
