@@ -3,18 +3,28 @@ session_start();
 include_once 'data/arraySP.php';
 include_once 'data/function.php';
 
-$id = $_POST['id'];
-
-$sp = findProduct($id,$arraySP);
-
-if(!empty($sp)){
-    $_SESSION['cart'] = [
-        $id => $sp,
-    ];
-    echo 'Add to cart success';
+$id = isset($_POST['id']) ? $_POST['id'] : null;
+if($id!==null){
+    $sp = findProduct($id,$arraySP);
+    if(!empty($sp)){
+        // if(!isset($_SESSION['cart'])){
+        //     $_SESSION['cart'] = [
+        //         $id => $sp
+        //     ];
+        // }
+        // else{
+        //     $_SESSION['cart'][$id] = $sp;
+        // }
+        
+        $_SESSION['cart'][$id] = $sp;
+        echo 'Add to cart success';
+    }
+    else{
+        echo 'Not found!';
+    }
 }
 else{
-    echo 'Not found!';
+    echo 'Plz choose product';
 }
 
 
