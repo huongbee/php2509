@@ -67,3 +67,15 @@ CREATE TABLE `php2509_2`.`bills` (
     `updated_at` DATETIME NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+
+CREATE TABLE `php2509_2`.`bill_detail` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `bill_id` INT NOT NULL , 
+    `product_id` INT NOT NULL , 
+    `quantity` FLOAT NOT NULL DEFAULT '0' , 
+    `total` FLOAT NOT NULL DEFAULT '0' , 
+    `created_at` DATETIME NULL DEFAULT NULL , 
+    `updated_at` DATETIME NULL DEFAULT NULL , 
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
