@@ -32,3 +32,25 @@ CREATE TABLE `php2509_2`.`products` (
     `updated_at` DATETIME NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE `php2509_2`.`banner` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `image` VARCHAR(225) NOT NULL , 
+    `title` VARCHAR(255) NULL DEFAULT NULL , 
+    `link` VARCHAR(255) NULL DEFAULT NULL , 
+    `status` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0_hide, 1_show' , 
+    `created_at` DATETIME NULL DEFAULT NULL , 
+    `updated_at` DATETIME NULL DEFAULT NULL , 
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE `php2509_2`.`categories` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(255) NOT NULL , 
+    `image` VARCHAR(255) NOT NULL , 
+    `parent_id` INT NOT NULL , 
+    `status` TINYINT(1) NULL DEFAULT '0' COMMENT '0_hide, 1_show' , 
+    `created_at` DATETIME NULL DEFAULT NULL , 
+    `updated_at` DATETIME NULL DEFAULT NULL , 
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
