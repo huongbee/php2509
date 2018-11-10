@@ -15,3 +15,20 @@ CREATE TABLE `php2509_2`.`users` (
 -- danh muc cac san pham
 -- luu hoa don da mua, cho biet trang thai cua hoa don 
 -- luu tru ds khach hang
+
+
+CREATE TABLE `php2509_2`.`products` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(225) NOT NULL , 
+    `price` FLOAT NOT NULL DEFAULT '0' , 
+    `promotion_price` FLOAT NOT NULL DEFAULT '0' , 
+    `type_id` INT NOT NULL , 
+    `image` VARCHAR(255) NOT NULL , 
+    `summary` VARCHAR(500) NOT NULL , 
+    `detail` TEXT NOT NULL , 
+    `new` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0_old, 1_new' , 
+    `status` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0_hide, 1_show' , 
+    `created_at` DATETIME NULL DEFAULT NULL , 
+    `updated_at` DATETIME NULL DEFAULT NULL , 
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
