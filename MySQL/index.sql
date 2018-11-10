@@ -54,3 +54,16 @@ CREATE TABLE `php2509_2`.`categories` (
     `updated_at` DATETIME NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE `php2509_2`.`bills` ( 
+    `id` INT NOT NULL AUTO_INCREMENT , 
+    `customer_id` INT NOT NULL , 
+    `date_order` DATETIME NOT NULL , 
+    `date_delivery` DATETIME NULL DEFAULT NULL , 
+    `total` FLOAT NOT NULL DEFAULT '0' , 
+    `total_discount` FLOAT NOT NULL DEFAULT '0' , 
+    `status` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0_DHthanhcong, 1_DHdanhan, 2_danggiao, 3_dagiao, 4_bihuy' , 
+    `created_at` DATETIME NULL DEFAULT NULL , 
+    `updated_at` DATETIME NULL DEFAULT NULL , 
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
