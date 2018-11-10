@@ -79,3 +79,12 @@ CREATE TABLE `php2509_2`.`bill_detail` (
     `updated_at` DATETIME NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+
+ALTER TABLE `bill_detail` 
+    ADD CONSTRAINT `fk_bills_bill_detail` 
+    FOREIGN KEY (`bill_id`) REFERENCES `bills`(`id`) 
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `bill_detail` 
+    ADD FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) 
