@@ -139,3 +139,22 @@ GROUP BY column1,...
 HAVING DK_cho_group_by 
 ORDER BY column ASC|DESC
 LIMIT position,quantity
+
+
+
+
+20. Liệt kê danh sách sản phẩm gồm có tên Tên loại, Tên sp, Mô tả, Đơn giá và sắp xếp Tên loại theo chiều tăng dần.
+
+SELECT categories.name AS tenloai , products.name AS tensp, detail 
+FROM products, categories
+WHERE products.id_type = categories.id 
+AND categories.name = '...'
+ORDER BY categories.name ASC
+
+
+SELECT categories.name AS tenloai , products.name AS tensp, detail 
+FROM products
+INNER JOIN categories
+ON products.id_type = categories.id 
+WHERE categories.name = '...'
+ORDER BY categories.name ASC
