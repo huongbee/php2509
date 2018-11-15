@@ -88,3 +88,54 @@ ALTER TABLE `bill_detail`
 
 ALTER TABLE `bill_detail` 
     ADD FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) 
+
+
+
+INSERT INTO users(id,name,email,birthdate,password)
+VALUES (2,'Khoa Phạm 02','khoapham04@gmail.com','1999-2-16','244232335fgsdfjfw'),
+       (3,'Khoa Phạm 03','khoapham05@gmail.com','1999-2-16','244232335fgsdfjfw');
+
+
+INSERT INTO users
+VALUES (...);
+
+
+
+UPDATE users
+SET name='Nguyen Van A', birthdate='2000-3-30'
+WHERE id=2
+
+UPDATE users
+SET email='khoa@yahoo.com'
+WHERE email='khoapham05@gmail.com'
+
+UPDATE users
+SET password='234567'
+WHERE email LIKE '%gmail com%'
+
+
+= <= >= != <>
+LIKE 
+NOT LIKE
+IN(1,2,3)
+NOT IN() 
+IS NULL
+IS NOT NULL 
+id BETWEEN 1 AND 4  ~ id>=1 AND id<=4
+AND 
+OR ~ IN(1,2,3,7,6)
+
+
+DELETE FROM users
+WHERE id IN (1,2,3) 
+LIMIT 0,3
+
+
+SELECT column1, column2,... 
+FROM table1, table2,.... 
+WHERE DKLK
+    AND ... 
+GROUP BY column1,... 
+HAVING DK_cho_group_by 
+ORDER BY column ASC|DESC
+LIMIT position,quantity
