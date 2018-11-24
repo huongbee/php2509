@@ -27,7 +27,7 @@ catch(PDOException $e){
         
 // $check = $connect->exec($sql);
 // var_dump($check);
-// echo "<div>";
+echo "<div>";
 
 // $sql = "SELECT * FROM users";
 // $result = $connect->query($sql,PDO::FETCH_OBJ);
@@ -55,9 +55,14 @@ $sql   = "SELECT * FROM users";
 $stmt  = $connect->prepare($sql);
 $check = $stmt->execute();
 if($check){
-    // $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-    $result = $stmt->fetch(PDO::FETCH_OBJ);
-    print_r($result);
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    // $result = $stmt->fetch(PDO::FETCH_OBJ);
+    // echo $result->username;
+    // print_r($result);
+    foreach($result as $item){
+        echo $item->username;
+        echo '<br>';
+    }
 }
 else{
     echo "Error: review query";
