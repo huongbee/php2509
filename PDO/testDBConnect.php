@@ -2,15 +2,40 @@
 include_once 'DBConnect.php';
 
 
+
+$nameType = 'iPhone 8|8Plus';
+$sql = "SELECT p.* 
+        FROM products p
+        INNER JOIN categories c
+        ON c.id = p.id_type
+        WHERE c.name='$nameType'";
+
 $conn = new DBConnect();
+$products = $conn->loadMoreRow($sql);
+// print_r($products);
+echo '<ul>';
+foreach($products as $p){
+    echo '<li>'.$p->name.': '.$p->price.'</li>';
+}
+echo "</ul>";
 
+// $nameType = ['iPhone 8|8Plus'];
+// $sql = "SELECT p.* 
+//         FROM products p
+//         INNER JOIN categories c
+//         ON c.id = p.id_type
+//         WHERE c.name=?";
 
-$idUser1 = 12;
-$idUser2 = 10;
+// $conn = new DBConnect();
+// $products = $conn->loadMoreRow($sql,$nameType);
+// print_r($products);
 
-$sql = "SELECT * FROM users WHERE id=$idUser1 OR id=$idUser2";
-$user = $conn->loadMoreRow($sql);
-print_r($user);
+// $idUser1 = 12;
+// $idUser2 = 10;
+
+// $sql = "SELECT * FROM users WHERE id=$idUser1 OR id=$idUser2";
+// $user = $conn->loadMoreRow($sql);
+// print_r($user);
 
 // $data = [12];
 // $sql = "SELECT * FROM users WHERE id=?";
