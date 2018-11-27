@@ -4,9 +4,23 @@ include_once 'DBConnect.php';
 
 $conn = new DBConnect();
 
+
+$idUser1 = 12;
+$idUser2 = 10;
+
+$sql = "SELECT * FROM users WHERE id=$idUser1 OR id=$idUser2";
+$user = $conn->loadMoreRow($sql);
+print_r($user);
+
+// $data = [12];
+// $sql = "SELECT * FROM users WHERE id=?";
+// $user = $conn->loadOneRow($sql, $data);
+// print_r($user);
+
+
 // $sql = "DELETE FROM users WHERE id=?";
 // $data = [9];
-
+/*
 $username = "manager02";
 $password = md5(md5('111111111').'private_key');
 $fullname = 'Nguyễn Văn Manger 02';
@@ -24,5 +38,6 @@ if($result){
 else{
     echo 'error!';
 }
+*/
 
 ?>
